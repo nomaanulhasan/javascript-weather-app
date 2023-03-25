@@ -1,18 +1,17 @@
+$dark-color: hsl(200, 100%, 10%);
+$label-color: hsl(200, 100%, 20%);
+$light-color: hsl(200, 100%, 85%);
+$small: 500px;
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-:root {
-  --dark-color: hsl(200, 100%, 10%);
-  --label-color: hsl(200, 100%, 20%);
-  --light-color: hsl(200, 100%, 85%);
-}
-
 body {
-  background-color: var(--light-color);
-  color: var(--dark-color);
+  background-color: $light-color;
+  color: $dark-color;
   font-family: sans-serif;
   margin: 0;
 }
@@ -22,18 +21,35 @@ body {
   overflow: hidden;
 }
 
+.container {
+  max-width: 992px;
+  margin: auto;
+}
+
 .header {
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
   display: flex;
 
+  @media screen and (min-width: $small) {
+    flex-direction: row;
+  }
+
   &-left {
-    border-right: 2px solid var(--dark-color);
-    justify-items: center;
+    border-bottom: 2px solid $dark-color;
+    justify-content: center;
     align-items: center;
     padding: 0.5rem;
     margin: 0.5rem;
     display: flex;
-    width: 50%;
+    width: 100%;
+
+    @media screen and (min-width: $small) {
+      border-right: 2px solid $dark-color;
+      border-bottom: none;
+      width: 50%;
+    }
   }
 
   &-right {
@@ -42,7 +58,11 @@ body {
     justify-content: space-around;
     display: grid;
     gap: 0.5rem;
-    width: 50%;
+    width: 100%;
+
+    @media screen and (min-width: $small) {
+      width: 50%;
+    }
   }
 
   &-current {
@@ -73,7 +93,7 @@ body {
 }
 
 .label {
-  color: var(--label-color);
+  color: $label-color;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.6rem;
@@ -95,7 +115,7 @@ body {
     gap: 0.75rem;
   }
   &-card {
-    border: 1px solid var(--dark-color);
+    border: 1px solid $dark-color;
     flex-direction: column;
     border-radius: 0.25rem;
     align-items: center;
@@ -103,7 +123,7 @@ body {
     display: flex;
 
     &-day {
-      color: var(--label-color);
+      color: $label-color;
       font-size: 0.75rem;
       margin-top: 0.5rem;
     }
