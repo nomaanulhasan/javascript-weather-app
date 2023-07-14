@@ -1,6 +1,6 @@
 # JavaScript Weather App
 
-This repository contains a Weather App built using HTML, CSS, and JavaScript. The app fetches real-time weather information based on the user's current location using the Open-Meteo API. It allows users to check the current weather conditions, temperature, humidity, and more for their location.
+This repository contains a Weather App built using HTML, SCSS, and JavaScript. The app fetches real-time weather information based on the user's current location using the Open-Meteo API. It allows users to check the current weather conditions, temperature, humidity, and more for their location.
 
 ## Features
 
